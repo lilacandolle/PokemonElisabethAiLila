@@ -1,7 +1,7 @@
-# Pokémon: projet informatique 2022-2023
+# Pokémon: projet informatique
+
 
 ## Matériel de départ
-
 
 #### Dans le répertoire "document", vous avez:
 
