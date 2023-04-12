@@ -17,7 +17,7 @@
 
 * Squelette d'un projet Java qui contient quelques classes qui construisent une interface graphique pour démarrer le jeu
 
-Pour tester:
+Pour tester l'interface graphique:
 
 1. Importer le projet Java dans Eclipse
 2. Lancer la classe MainApplication
