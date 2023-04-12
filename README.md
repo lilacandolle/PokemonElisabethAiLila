@@ -1,4 +1,4 @@
-# Projet informatique 2022-2023: Pokémon
+# Pokémon: projet informatique 2022-2023
 
 ## Matériel de départ
 
