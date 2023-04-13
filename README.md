@@ -1,21 +1,21 @@
-# Pokémon: projet informatique
+# Pokï¿½mon: projet informatique
 
 
-## Matériel de départ
+## Matï¿½riel de dï¿½part
 
-#### Dans le répertoire "document", vous avez:
+#### Dans le rï¿½pertoire "document", vous avez:
 
-* la présentation du projet informatique (ProjetInfo_Ing1_2023.pdf)
-* des exemples de règles de combat entre les pokémons (MondePokemon.pdf)
+* la prï¿½sentation du projet informatique (ProjetInfo_Ing1_2023.pdf)
+* des exemples de rï¿½gles de combat entre les pokï¿½mons (MondePokemon.pdf)
 * le support de cours des interfaces graphiques
 
-#### Dans le répertoire "data", vous avez:
+#### Dans le rï¿½pertoire "data", vous avez:
 
-* ??
+* Un fichier csv contenant les 150 pokemons de la premiÃ¨re gÃ©nÃ©ration, ainsi que leurs attributs.
 
-#### Dans le répertoire "jeu", vous avez:
+#### Dans le rï¿½pertoire "jeu", vous avez:
 
-* Squelette d'un projet Java qui contient quelques classes qui construisent une interface graphique pour démarrer le jeu
+* Squelette d'un projet Java qui contient quelques classes qui construisent une interface graphique pour dï¿½marrer le jeu
 
 Pour tester l'interface graphique:
 
@@ -23,6 +23,6 @@ Pour tester l'interface graphique:
 2. Lancer la classe MainApplication
 
 
-## Comment créer votre dépôt github ?
+## Comment crï¿½er votre dï¿½pï¿½t github ?
 
 Fork ....
