@@ -12,6 +12,16 @@
 #### Dans le répertoire "data", vous avez:
 
 * Un fichier csv contenant les 150 pokemons de la première génération, ainsi que leurs attributs.
+* Les attributs:
+  1. Total:
+  2. HP:
+  3. Attack:
+  4. Defense:
+  5. Sp. Atk:
+  6. Sp. Def:
+  7. Speed:
+  8. Generation:
+  9. Legendary:
 
 #### Dans le répertoire "jeu", vous avez:
 
