@@ -23,6 +23,8 @@
   8. Generation:
   9. Legendary:
 
+* Un fichier csv contenant une liste de pokemons avec des coordonnées géographiques.
+
 #### Dans le répertoire "jeu", vous avez:
 
 * Squelette d'un projet Java qui contient quelques classes qui construisent une interface graphique pour démarrer le jeu
