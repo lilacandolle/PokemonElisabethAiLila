@@ -25,4 +25,6 @@ Pour tester l'interface graphique:
 
 ## Comment créer votre dépôt github ?
 
-Fork ....
+1. Se créer un identifiant github
+2. Demander à un enseignant de vous ajouter dans le dépôt
+3. Fork ....
