@@ -7,7 +7,7 @@ public class PokemonDuJeu {
 	private Coordinate Coord;
 	private Boolean isSauvage;
 	
-	private PokemonDuJeu(Pokemon pokemon, int id, Coordinate Coord, Boolean isSauvage) {
+	public PokemonDuJeu(Pokemon pokemon, int id, Coordinate Coord, Boolean isSauvage) {
 		this.pokemon = pokemon;
 		this.id = id;
 		this.Coord = Coord;
@@ -19,11 +19,11 @@ public class PokemonDuJeu {
 	public Coordinate getCoord() {return this.Coord;}
 	public Boolean getisSauvage() {return this.isSauvage;}
 	
-	private Coordinate setCoord(Coordinate coord) {
+	public void setCoord(Coordinate coord) {
 		this.Coord = coord;
 	}
 	
-	private Boolean setisSauvage(Boolean issauvage) {
+	public void setisSauvage (Boolean issauvage) {
 		this.isSauvage = issauvage;
 	}
 	

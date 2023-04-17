@@ -1,4 +1,4 @@
-package jeu.eu.ensg.gestiondespokemons;
+package gestionDesPokemons;
 
 public enum Famille {
     //créer énumération des familles de pokémons

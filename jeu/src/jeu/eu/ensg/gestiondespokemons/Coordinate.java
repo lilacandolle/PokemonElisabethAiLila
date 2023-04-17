@@ -1,4 +1,4 @@
-package jeu.eu.ensg.gestiondespokemons;
+package gestionDesPokemons;
 
 public class Coordinate {
     //créer coordinate avec x, y comme attributs, des getters, et une distance

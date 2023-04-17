@@ -1,4 +1,4 @@
-package jeu.eu.ensg.gestiondespokemons;
+package gestionDesPokemons;
 
 import java.util.ArrayList;
 import java.util.List;
