@@ -1,4 +1,4 @@
-package gestionDesPokemons ;
+package gestiondespokemons ;
 
 public class Combat {
     private Pokemon pokemonS = //pokemon choisit par le joueur ;

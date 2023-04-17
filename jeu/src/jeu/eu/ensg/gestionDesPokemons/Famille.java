@@ -1,4 +1,4 @@
-package gestionDesPokemons;
+package gestiondespokemons;
 
 public enum Famille {
     //créer énumération des familles de pokémons
