@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainJoueur {
-    private List<Pokemon> ListeDeCaptures;
+    private List<PokemonDuJeu> ListeDeCaptures;
 
     public MainJoueur() {
-        this.ListeDeCaptures = new ArrayList<Pokemon>();
+        this.ListeDeCaptures = new ArrayList<PokemonDuJeu>();
     }
 
-    public List<Pokemon> getListeDeCaptures() {
+    public List<PokemonDuJeu> getListeDeCaptures() {
         return ListeDeCaptures;
     }
 

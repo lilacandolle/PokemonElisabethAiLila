@@ -1,5 +1,7 @@
 package gestiondespokemons ;
 
+import Math.random()
+
 public class Combat {
     private Pokemon pokemonS = ; //!pokemon choisit par le joueur ;
     private Pokemon pokemonD ;
@@ -68,7 +70,7 @@ public class Combat {
             else {
                 PA = pokemonS ;
                 DD = pokemonD ;
-                if (random > 0.5) {
+                if (Math.random > 0.5) {
                     attaque(neutre, pokemon, pokemonD)
                 }
                 else {
