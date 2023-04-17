@@ -19,8 +19,8 @@ public class PokemonDuJeu {
 	public Coordinate getCoord() {return this.Coord;}
 	public Boolean getisSauvage() {return this.isSauvage;}
 	
-	public void setCoord(Coordinate coord) {
-		this.Coord = coord;
+	public void setCoord(int x, int y) {
+		this.Coord = new Coordinate(x, y);
 	}
 	
 	public void setisSauvage (Boolean issauvage) {
