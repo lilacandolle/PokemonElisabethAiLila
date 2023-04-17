@@ -1,4 +1,4 @@
-package jeu.eu.ensg.gui;
+package gui;
 
 import java.awt.Color;
 import java.awt.Font;
