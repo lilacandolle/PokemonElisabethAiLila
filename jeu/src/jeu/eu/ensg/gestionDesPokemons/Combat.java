@@ -10,6 +10,7 @@ public class Combat {
     private int hpS = pokemonS.getPokemon().getHP();
     private int hpD = pokemonD.getPokemon().getHP();
     
+
     public void changerPok(PokemonDuJeu nouveaupokemon) {
         pokemonS = nouveaupokemon;
     }
@@ -196,10 +197,9 @@ public class Combat {
         break;
     }*/
 
-    public static void main(String[] args) {
-        
+    public String Combat(pokemonS) {       
         public int i = 0 ;
-        changerPok() ;
+        pokemonD = changerPok() ;
 
         while (hpS>0 && hpD>0) {
 
@@ -216,7 +216,7 @@ public class Combat {
                     attaque(element, pokemonD, pokemonS) ; }
 
                 if (clique = changerPok) {
-                    changerPok() ; }
+                    pokemonD = changerPok() ; }
             }
 
             else {
@@ -231,5 +231,12 @@ public class Combat {
 
             i += 1 ;
         }
+
+        if (hpS > 0) {
+            return "Tu as perdu !" ; }
+        if (hpD > 0) {
+            pokemonS.setisSauvage(False) ;
+            ListeDeCaptures.addPokemon(pokemonS) ;
+            return "Tu as capturé " + pokemonS + " !" ; }
     }
 }
