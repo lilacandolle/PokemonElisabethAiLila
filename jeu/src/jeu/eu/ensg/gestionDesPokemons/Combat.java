@@ -1,6 +1,7 @@
 package gestiondespokemons ;
 
-import Math.random()
+import Math.random() ;
+import java.awt.event.* ;
 
 public class Combat {
     private Pokemon pokemonS = ; //!pokemon choisit par le joueur ;
@@ -10,7 +11,7 @@ public class Combat {
     
     public changerPok() {
         //!afficher les pokemons MDJ
-        pokemonD = clique(pokemonMDJ) ;
+        pokemonD = ActionListener(pokemonMDJ) ;
         System.out.println("Tu as choisis " + pokemonD) ;
     }
 
@@ -18,10 +19,10 @@ public class Combat {
         Famille famA = getFamille(PA) ;
         famAtk = Famille.famA ;
         Famille famD = getFamille(DD) ;
+
         if (typAtk == NEUTRE) {
             degats = 20 ; }
         else {
-
             coef = famAtk.famD ;
             degats = (int) coef * 20 ; }
         
@@ -40,8 +41,8 @@ public class Combat {
     }
 
     public fuite() {
-        //!quitte le combat
         System.out.println("Tu t'enfuies !") ;
+        break ;
     }
 
     public static void main(String[] args) {
