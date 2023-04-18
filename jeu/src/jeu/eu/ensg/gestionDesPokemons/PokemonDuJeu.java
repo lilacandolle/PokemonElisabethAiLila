@@ -13,7 +13,8 @@ public class PokemonDuJeu {
 		this.Coord = Coord;
 		this.isSauvage = isSauvage;
 	}
-	
+	//get pokemon
+	public Pokemon getPokemon() {return this.pokemon;}
 	public String getNomPokemon() {return this.pokemon.getNom();}
 	public int getid() {return this.id;}
 	public Coordinate getCoord() {return this.Coord;}
