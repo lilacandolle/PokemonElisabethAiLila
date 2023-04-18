@@ -1,4 +1,4 @@
-package gestiondespokemons;
+package gestionDesPokemons;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class MainJoueur {
         return ListeDeCaptures;
     }
 
-    public void addPokemon(Pokemon p) {
+    public void addPokemon(PokemonDuJeu p) {
         this.ListeDeCaptures.add(p);
     }
 

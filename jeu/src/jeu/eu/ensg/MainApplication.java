@@ -1,4 +1,4 @@
-package jeu.eu.ensg;
+
 
 import java.awt.BorderLayout;
 
@@ -6,9 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import jeu.eu.ensg.gui.CartePanel;
-import jeu.eu.ensg.gui.ControlePanel;
-import jeu.eu.ensg.gui.FichePanel;
+import gui.CartePanel;
+import gui.ControlePanel;
+import gui.FichePanel;
 
 /**
  * Lancement de l'application graphique

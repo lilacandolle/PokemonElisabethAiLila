@@ -1,6 +1,6 @@
-package gestiondespokemons ;
+package gestionDesPokemons ;
 
-import Math.random() ;
+import Math.random();
 import java.awt.event.* ;
 
 public class Combat {

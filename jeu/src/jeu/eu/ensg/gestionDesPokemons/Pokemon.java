@@ -1,4 +1,4 @@
-package gestiondespokemons;
+package gestionDesPokemons;
 
 public class Pokemon {
 	
