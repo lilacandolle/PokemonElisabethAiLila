@@ -1,4 +1,4 @@
-package gestiondespokemons;
+package gestionDesPokemons;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package gestiondespokemons ;
+package gestionDesPokemons ;
 
 import Math.random() ;
 import java.awt.event.* ;
@@ -9,10 +9,16 @@ public class Combat {
     private int hpS = pokemonS.getHP() ;
     private int hpD = pokemonD.getHP() ;
     
+    public Combat(Pokemon pokemonS) {
+        pokemonS = this.pokemonS ;
+        pokemonD = this.pokemonD ;
+    }
+
     public changerPok() {
-        //!afficher les pokemons MDJ
+        System.out.println("Vos Pokémons" + MainJoueur()) ;
         pokemonD = ActionListener(pokemonMDJ) ;
         System.out.println("Tu as choisis " + pokemonD) ;
+        return pokemonD ;
     }
 
     public attaque(typAtk, Pokemon PA, Pokemon DD) {
@@ -45,10 +51,9 @@ public class Combat {
         break ;
     }
 
-    public static void main(String[] args) {
-        
+    public String Combat(pokemonS) {       
         public int i = 0 ;
-        changerPok() ;
+        pokemonD = changerPok() ;
 
         while (hpS>0 && hpD>0) {
 
@@ -65,7 +70,7 @@ public class Combat {
                     attaque(element, pokemonD, pokemonS) ; }
 
                 if (clique = changerPok) {
-                    changerPok() ; }
+                    pokemonD = changerPok() ; }
             }
 
             else {
@@ -80,5 +85,12 @@ public class Combat {
 
             i += 1 ;
         }
+
+        if (hpS > 0) {
+            return "Tu as perdu !" ; }
+        if (hpD > 0) {
+            pokemonS.setisSauvage(False) ;
+            ListeDeCaptures.addPokemon(pokemonS) ;
+            return "Tu as capturé " + pokemonS + " !" ; }
     }
 }
