@@ -2,19 +2,19 @@ package gestionDesPokemons;
 
 public class Coordinate {
     //créer coordinate avec x, y comme attributs, des getters, et une distance
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
-    public Coordinate(int x, int y) {
+    public Coordinate(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
