@@ -11,12 +11,16 @@ public class Combat {
     private int hpD = pokemonD.getPokemon().getHP();
     
 
+    public Combat(PokemonDuJeu pokemonS, PokemonDuJeu pokemonD) {
+        this.pokemonS = pokemonS;
+        this.pokemonD = pokemonD;
+    }
+
     public void changerPok(PokemonDuJeu nouveaupokemon) {
         pokemonS = nouveaupokemon;
     }
 
-
-    public void Action (boolean isElement, PokemonDuJeu attaquant, PokemonDuJeu defenseur) {
+    public void attaque (boolean isElement, PokemonDuJeu attaquant, PokemonDuJeu defenseur) {
         Famille famA = attaquant.getPokemon().getFamille() ;
         Famille famD = defenseur.getPokemon().getFamille();
         double coef;
@@ -165,78 +169,30 @@ public class Combat {
         else {
             degats = (int) coef * 20 ; }
         
-
-    }
-
-    /*public void attaque(boolean isElement, PokemonDuJeu attaquant, PokemonDuJeu defenseur) {
-        Famille famA = attaquant.getPokemon().getFamille() ;
-        Famille famD = defenseur.getPokemon().getFamille();
-        int degats;
-        if (!isElement) {
-            degats = 20 ; }
-        else {
-
-            degats = (int) coef * 20 ; }
-        
-        if (PA == pokemonS) {
+        if (defenseur==pokemonD){
             hpD -= degats  ;
-            System.out.println(pokemonS.getPokemon + " a infligé " + degats + " dégâts à " + pokemonD.getPokemon ;)
         }
         else {
             hpS -= degats  ;
-            System.out.println(pokemonD.getPokemon + " a infligé " + degats + " dégâts à " + pokemonS.getPokemon ;)
         }
         
-        System.out.println(attaquant.getNomPokemon()+ " a " + hpS + " HP !") ;
-        System.out.println(defenseur.getNomPokemon() + " a " + hpD + " HP !") ;
+    } 
 
-    }*/
-
-    /*public void fuite() {
-        System.out.println("Tu t'enfuies !");
-        break;
-    }*/
-
-    public String Combat(pokemonS) {       
-        public int i = 0 ;
-        pokemonD = changerPok() ;
-
-        while (hpS>0 && hpD>0) {
-
-            if (i % 2 == 0) {
-
-                //Le joueur clique sur une option
-                if (clique = fuite) {
-                    fuite() ; }
-
-                if (clique = attaque_neutre) {
-                    attaque(neutre, pokemonD, pokemonS) ; }
-
-                if (clique = attaque_element) {
-                    attaque(element, pokemonD, pokemonS) ; }
-
-                if (clique = changerPok) {
-                    pokemonD = changerPok() ; }
-            }
-
-            else {
-                PA = pokemonS ;
-                DD = pokemonD ;
-                if (Math.random() > 0.5) {
-                    attaque(neutre, pokemon, pokemonD) ; }
+    /*public boolean derouleDuCombat () {
+        boolean victoire = false ;
+        while (hpS > 0 && hpD > 0) {
+            attaque (true, pokemonD, pokemonS);
+            if (Math.random() > 0.5) {
+                    attaque(false, pokemonS, pokemonD) ; }
 
                 else {
-                    attaque(element, pokemonS, pokemonD) ; }
-            }
-
-            i += 1 ;
+                    attaque(true, pokemonS, pokemonD) ; }
         }
-
         if (hpS > 0) {
-            return "Tu as perdu !" ; }
-        if (hpD > 0) {
-            pokemonS.setisSauvage(False) ;
-            ListeDeCaptures.addPokemon(pokemonS) ;
-            return "Tu as capturé " + pokemonS + " !" ; }
-    }
+            victoire = true ;
+            pokemonS.setisSauvage(false);
+            MainJoueur.addPokemon(pokemonS);
+        }
+        return victoire ;
+    }*/
 }
