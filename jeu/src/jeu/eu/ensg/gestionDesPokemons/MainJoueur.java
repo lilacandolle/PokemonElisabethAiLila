@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainJoueur {
-    private List<PokemonDuJeu> ListeDeCaptures;
+    private List<PokemonDuJeu> listeDeCaptures;
 
     public MainJoueur() {
-        this.ListeDeCaptures = new ArrayList<PokemonDuJeu>();
+        this.listeDeCaptures = new ArrayList<PokemonDuJeu>();
     }
 
     public List<PokemonDuJeu> getListeDeCaptures() {
-        return ListeDeCaptures;
+        return listeDeCaptures;
     }
 
     public void addPokemon(PokemonDuJeu p) {
-        this.ListeDeCaptures.add(p);
+        this.listeDeCaptures.add(p);
     }
 
     @Override
     public String toString() {
-        return "Le joueur possède les pokémons suivants : " + ListeDeCaptures;
+        return "Le joueur possède les pokémons suivants : " + listeDeCaptures;
     }
 }
