@@ -2,6 +2,8 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -18,7 +20,7 @@ public class ControlePanel extends JPanel {
 
 	public ControlePanel(CartePanel cartePanel) {
 		
-		this.setSize(1000, 200);
+		this.setSize(1000, 1000);
 		
 		// On construit un bouton
 		JButton clic = new JButton("Clic ici");
@@ -32,6 +34,21 @@ public class ControlePanel extends JPanel {
 				cartePanel.ajoutMessage("Ici, hello !");
 			}
 		});
+
+		//on ajoute une méthode qui permet de récupérer les coordonnées d'un clic sur la carte et les retourne sous forme d'un tableau d'entiers
+		cartePanel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int[] coord = new int[2];
+				coord[0] = e.getX();
+				coord[1] = e.getY();
+				cartePanel.ajoutMessage("Coordonnées du clic : " + coord[0] + " " + coord[1]);
+			}
+		});
+
+
+
+
 
 	}
 	

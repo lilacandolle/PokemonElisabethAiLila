@@ -1,8 +1,10 @@
+package Main;
+
 import java.util.ArrayList;
 import java.util.Random;
-import gestionDesPokemons.*;
-import gui.*;
 
+import gestionDesPokemons.Coordinate;
+import gestionDesPokemons.Pokemon;
 import gestionDesPokemons.PokemonDuJeu;
 
 public class Jeu_general {
