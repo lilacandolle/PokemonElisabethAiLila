@@ -9,9 +9,11 @@ import java.util.List;
 import gestionDesPokemons.Famille;
 import gestionDesPokemons.Pokemon;
  
-public class ChargerPoke {
+public class ChargerPoke{
+    private ChargerPoke() {
+    }
  
-    public static void main(String[] args) {
+    public static void loadPokemon() {
  
         String csvFile = "data/pokemon_first_gen.csv";
  
