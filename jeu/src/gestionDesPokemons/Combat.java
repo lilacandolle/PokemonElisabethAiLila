@@ -23,7 +23,7 @@ public class Combat {
         pokemonD = nouveaupokemon;
     }
 
-    // Renvoie des coeff selon le type de l'attaque, du pokemon qui attaque et de celui qui défent
+    // Applique les dégâts selon les types de l'attaque, du pokemon qui attaque et de celui qui défent
     public void attaque (boolean isElement, PokemonDuJeu attaquant, PokemonDuJeu defenseur) {
         Famille famA = attaquant.getPokemon().getFamille(); //trouve la famille du pokemon attaquant
         Famille famD = defenseur.getPokemon().getFamille(); //trouve la famille du pokemon défenseur
@@ -166,6 +166,7 @@ public class Combat {
                     default -> 1;
                 };
                 break ;
+
             default:
                 coef = 1;
                 break ;
@@ -186,21 +187,4 @@ public class Combat {
         
     } 
 
-    /*public boolean derouleDuCombat () {
-        boolean victoire = false ;
-        while (hpS > 0 && hpD > 0) {
-            attaque (true, pokemonD, pokemonS);
-            if (Math.random() > 0.5) {
-                    attaque(false, pokemonS, pokemonD) ; }
-
-                else {
-                    attaque(true, pokemonS, pokemonD) ; }
-        }
-        if (hpS > 0) {
-            victoire = true ;
-            pokemonS.setisSauvage(false);
-            MainJoueur.addPokemon(pokemonS);
-        }
-        return victoire ;
-    }*/
-}
+    
