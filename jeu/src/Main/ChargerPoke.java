@@ -32,9 +32,9 @@ public class ChargerPoke{
  
                 Pokemon pokemon = new Pokemon(nom, famille, HP);
                 pokemons.add(pokemon);
-                return pokemons;
+                
             }
- 
+            return pokemons;
         } catch (IOException e) {
             e.printStackTrace();
         }

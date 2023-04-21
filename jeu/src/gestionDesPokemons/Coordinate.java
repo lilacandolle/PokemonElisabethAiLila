@@ -3,19 +3,19 @@ package gestionDesPokemons;
 // La classe Coordinate possède les attrinuts x et y, des getters, et une méthode distance
 public class Coordinate {
     
-    private double x;
-    private double y;
+    private int x;
+    private int y;
 
-    public Coordinate(double x, double y) {
+    public Coordinate(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public double getX() {
+    public int getX() {
         return x;
     }
 
-    public double getY() {
+    public int getY() {
         return y;
     }
 

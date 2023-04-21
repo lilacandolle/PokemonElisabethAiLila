@@ -1,13 +1,16 @@
 package Main;
 
+import java.awt.MouseInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.awt.MouseInfo;
 
 import gestionDesPokemons.*;
 
 public class Jeu_general {
 	
+
 	/**
 	 * Instancie les types de pokemons et les pokemons du jeu
 	 */
@@ -38,17 +41,18 @@ public class Jeu_general {
 		}
 	}
 	
+
 	/**
 	 * L'utilisateur clique sur la carte et on lui affiche les pokémons présents à moins de 5 unités de lui
 	 * @return List PokProches
 	 */
-	public ArrayList<PokemonDuJeu> cliquerSurCarte() {
+	public ArrayList<PokemonDuJeu> cliquerSurCarte(ArrayList<PokemonDuJeu> listePokemonDuJeu) {
 		ArrayList<PokemonDuJeu> PokProches = new ArrayList<PokemonDuJeu>();
 		while (PokProches.size() == 0) {
-			Coordinate coord = ActionListener() ;
-			for (int i=0; i<=listePokemon.size(); i++) {
-				if (coord.distance(listePokemon.get(i).getCoord()) <= 5) {
-					PokProches.add(listePokemon.get(i));
+			Coordinate coord = new Coordinate(MouseInfo.getPointerInfo().getLocation().getX(),MouseInfo.getPointerInfo().getLocation().getY()) ;
+     	for (int i=0; i<=listePokemonDuJeu.size(); i++) {
+				if (coord.distance(listePokemonDuJeu.get(i).getCoord()) <= 5) {
+					PokProches.add(listePokemonDuJeu.get(i));
 				}
 			}
 			System.out.println("Il n'y a pas de Pokémons dans ce secteur!");
