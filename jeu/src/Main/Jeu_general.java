@@ -3,6 +3,7 @@ package Main;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.awt.MouseInfo;
 
 import gestionDesPokemons.Coordinate;
 import gestionDesPokemons.Pokemon;
@@ -38,7 +39,7 @@ public class Jeu_general {
 		// présents à moins de 5 unités de lui
 		ArrayList<PokemonDuJeu> PokProches = new ArrayList<PokemonDuJeu>();
 		while (PokProches.size() == 0) {
-			Coordinate coord = ActionListener() ;
+			Coordinate coord = new Coordinate(MouseInfo.getPointerInfo().getLocation().getX(),MouseInfo.getPointerInfo().getLocation().getY()) ;
 			for (int i=0; i<=listePokemon.size(); i++) {
 				if (coord.distance(listePokemon.get(i).getCoord()) <= 5) {
 					PokProches.add(listePokemon.get(i));
