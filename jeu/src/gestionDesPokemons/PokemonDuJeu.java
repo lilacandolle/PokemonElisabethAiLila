@@ -7,6 +7,7 @@ public class PokemonDuJeu {
 	private int id;
 	private Coordinate Coord;
 	private Boolean isSauvage;
+	private Random rand = new Random();
 	
 	public PokemonDuJeu(Pokemon pokemon, int id, Boolean isSauvage) {
 		this.pokemon = pokemon;
@@ -16,12 +17,9 @@ public class PokemonDuJeu {
 	}
 
 	public Coordinate genereCoord() {
-		Random r1 = new Random();
-		Random r2 = new Random();
-		int x = r1.nextInt(1000);
-		int y = r2.nextInt(800);
-		Coordinate coord_Pok = new Coordinate(x, y);
-		return coord_Pok;
+		int x = rand.nextInt(1000);
+		int y = rand.nextInt(800);
+		return new Coordinate(x, y);
 	}
 
 	//get pokemon
