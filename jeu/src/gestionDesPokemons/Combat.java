@@ -184,7 +184,7 @@ public class Combat {
         else {
             hpS -= degats  ;
         }
-        
+    
     } 
 
     
