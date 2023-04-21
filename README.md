@@ -5,7 +5,7 @@ Elisabeth Giroux, Annemarie Legouix, Lila Cassan
 
 ## Main
 ````
-Il faut lancer Main
+Il faut lancer MainApplication
 ````
 
 ## Consignes importantes pour le projet

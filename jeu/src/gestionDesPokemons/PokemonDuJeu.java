@@ -1,16 +1,26 @@
 package gestionDesPokemons;
+import java.util.Random ;
 
 public class PokemonDuJeu {
 	
 	private Pokemon pokemon;
 	private Coordinate Coord;
 	private Boolean isSauvage;
+	private Random rand = new Random();
 	
 	public PokemonDuJeu(Pokemon pokemon, Coordinate Coord, Boolean isSauvage) {
 		this.pokemon = pokemon;
 		this.Coord = Coord;
+
 		this.isSauvage = isSauvage;
 	}
+
+	public Coordinate genereCoord() {
+		int x = rand.nextInt(1000);
+		int y = rand.nextInt(800);
+		return new Coordinate(x, y);
+	}
+
 	//get pokemon
 	public Pokemon getPokemon() {return this.pokemon;}
 	public String getNomPokemon() {return this.pokemon.getNom();}
