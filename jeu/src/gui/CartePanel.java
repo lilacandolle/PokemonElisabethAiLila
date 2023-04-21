@@ -4,8 +4,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.List;
 
 import javax.swing.JPanel;
+
+import gestionDesPokemons.PokemonDuJeu;
 
 /**
  * Exemple de panneau contenant un espace où on peut dessiner.
@@ -15,12 +18,15 @@ import javax.swing.JPanel;
 public class CartePanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private List<PokemonDuJeu> pokes;
 
 	/**
 	 * Constructeur.
 	 */
-	public CartePanel() {
+	public CartePanel(List<PokemonDuJeu> pokes) {
+		this.pokes = pokes;
 	}
+
 	
 
 	/**
@@ -31,9 +37,9 @@ public class CartePanel extends JPanel {
 		Graphics2D g2D = (Graphics2D) g;
 		
 		// On dessine 10 points bleus
-		for (int i = 0; i < 10; i++) {
-			g2D.setPaint(Color.blue);
-			g.fillOval(i*50 + 100, i*50 + 100, 10, 10);
+		for (PokemonDuJeu poke : pokes) {
+			g2D.setPaint(Color.red);
+			g.fillOval(poke.getCoord().getX(), poke.getCoord().getY(), 10, 10);
 		}
 		
 		if (!this.message.equals("")) {
