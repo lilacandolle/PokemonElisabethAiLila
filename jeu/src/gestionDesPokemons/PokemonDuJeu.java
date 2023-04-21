@@ -6,6 +6,7 @@ public class PokemonDuJeu {
 	private Pokemon pokemon; //les Pokemon du jeu sont des types de Pokemon
 	private Coordinate Coord; //les Pokemon du jeu ont des coordonnées, sauf s'ils ont été capturés
 	private Boolean isSauvage; //les Pokemon du jeu peuvent être sauvages ou avoir été capturés
+	private Random rand = new Random(); //crée un objet Random pour générer des coordonnées aléatoires
 	
 	// Constructeur
 	public PokemonDuJeu(Pokemon pokemon, Coordinate Coord, Boolean isSauvage) {
