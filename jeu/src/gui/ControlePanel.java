@@ -8,6 +8,8 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import gestionDesPokemons.TypeAttaque;
+
 /**
  * Exemple de panneau contenant un bouton avec un évènement sur un autre panneau 
  * qui est passé en paramètre dans le constructeur.
@@ -33,6 +35,15 @@ public class ControlePanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				cartePanel.ajoutMessage("Ici, hello !");
 			}
+		});
+
+		//des bouttons pour choisir les actions
+		JButton attaqueElement = new JButton("attaque élément", null) ;
+		attaqueElement.setBounds(50, 50, 20, 100);
+		this.add(attaqueElement) ;
+		attaqueElement.setVisible(true);
+		attaqueElement.addActionListener(new ActionListener() {
+			TypeAttaque = ELEMENT ;
 		});
 
 		//on ajoute une méthode qui permet de récupérer les coordonnées d'un clic sur la carte et les retourne sous forme d'un tableau d'entiers

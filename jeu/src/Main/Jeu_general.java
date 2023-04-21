@@ -10,8 +10,29 @@ import gestionDesPokemons.*;
 
 public class Jeu_general {
 	
+
+	/**
+	 * Instancie les types de pokemons et les pokemons du jeu
+	 */
+	public static void debutduJeu() {
+		List<Pokemon> Pokemons = ChargerPoke.loadPokemon();
+		ArrayList<PokemonDuJeu> listePokemonDuJeu = new ArrayList<PokemonDuJeu>();
+		for (int i=0; i<=7; i++) {
+			for (int j=1; i<=Pokemons.size(); j++){
+				Pokemon pokemon = Pokemons.get(j);
+				PokemonDuJeu pok = new PokemonDuJeu(pokemon, true);
+				listePokemonDuJeu.add(pok);
+			}
+		}
+		creerMDJ(listePokemonDuJeu, 5);
+	}
+	
+	/**
+	 * @param listePokemon
+	 * @param nbPok
+	 * crée la main du joueur avec un nombre de pokemons donné
+	 */
 	public static void creerMDJ(ArrayList<PokemonDuJeu> listePokemon, int nbPok) {
-		// crée la main du joueur avec un nombre de pokemons
 		Random r = new Random();
 		for (int i=0; i<=nbPok; i++ ){
 			int indPok = r.nextInt(listePokemon.size());
@@ -20,9 +41,12 @@ public class Jeu_general {
 		}
 	}
 	
+
+	/**
+	 * L'utilisateur clique sur la carte et on lui affiche les pokémons présents à moins de 5 unités de lui
+	 * @return List PokProches
+	 */
 	public ArrayList<PokemonDuJeu> cliquerSurCarte(ArrayList<PokemonDuJeu> listePokemonDuJeu) {
-		// L'utilisateur clique sur la carte et on lui affiche les pokémons
-		// présents à moins de 5 unités de lui
 		ArrayList<PokemonDuJeu> PokProches = new ArrayList<PokemonDuJeu>();
 		while (PokProches.size() == 0) {
 			Coordinate coord = new Coordinate(MouseInfo.getPointerInfo().getLocation().getX(),MouseInfo.getPointerInfo().getLocation().getY()) ;
@@ -38,6 +62,7 @@ public class Jeu_general {
 	}
 
 	/**
+	 * @param pokemonS
 	 * La méthode derouleDuCombat prend en entrée le pokémon sauvage choisit par le joueur.
 	 * Le combat est initialisé par le choix d'un pokemon du joueur.
 	 * Ensuite, le combat se déroule au tour par tour (calculé grâce à l'incrément i).
@@ -52,7 +77,7 @@ public class Jeu_general {
 			int i = 0 ;
 			Pokemon pokemonD = changerPok(nouveaupokemon) ; //le joueur choisit un de ses pokemons
 			while (hpS > 0 && hpD > 0) { //tant qu'il reste des vies aux deux pokémons, la boucle tourne
-				if (i%2 == 0) { //c'est au joueur de commencer à jouer
+				if (i%2 == 0) {		 //c'est au joueur de commencer à jouer
 				switch (TypeAttaque) { 
 					case ELEMENT :
 						attaque (true, pokemonD, pokemonS);
@@ -85,9 +110,12 @@ public class Jeu_general {
 		}
 
 	
+	/**
+	 * Demande au joueur de choisir le pokémon à attaquer et le pokémon défenseur 
+	 * et renvoie le résultat du combat
+	 * @return boolean resultat
+	 */
 	public String lancerLeCombat() {
-		// demande au joueur de choisir le pokémon à attaquer
-		// et le pokémon défenseur et renvoie le résultat du combat
 		System.out.println("Quel Pokémon voulez-vous attaquer?");
 		Pokemon pokemonS = choisirPokemonS();
 		String resultat = new String ();
@@ -100,13 +128,15 @@ public class Jeu_general {
 		return resultat;
 	}
 	
+	/**
+	 * Permet à l'utilisateur de choisir le pokémon qu'il veut combattre dans la liste des pokémons proches de lui
+	 * @return
+	 */
 	public Pokemon choisirPokemonS() {
-		//Permet à l'utilisateur de choisir le pokémon qu'il veut combattre 
-		// dans la liste des pokémons proches de lui
 		ArrayList<PokemonDuJeu> PokProches = cliquerSurCarte();
 		System.out.println("Proche de vous il y a: " + PokProches);
 		Pokemon PokS = ActionListener(PokProches);
 		return PokS;
 	}
-
+	}
 }
