@@ -37,7 +37,7 @@ public class MainApplication {
 				listePokemonDuJeu.add(pok);
 			}
 		}
-		Jeu_general.creerMDJ(listePokemonDuJeu, 5);
+		//Jeu_general.creerMDJ(listePokemonDuJeu, 5);
 		// Look and Feel dépend de l'OS.
 		try {
 			String os = System.getProperty("os.name").toLowerCase();
@@ -64,13 +64,14 @@ public class MainApplication {
 		fen.setSize(1000, 800);
 
 		// just a JPanel extension, add to any swing/awt container
-		final CartePanel mapPanel = new CartePanel(); 
+		final CartePanel mapPanel = new CartePanel(listePokemonDuJeu);
+		ControlePanel controlePanel = new ControlePanel(mapPanel);
 
 		fen.setLayout(new BorderLayout());
 		
 		fen.add(BorderLayout.CENTER, mapPanel);
 		fen.add(BorderLayout.EAST, new FichePanel());
-		fen.add(BorderLayout.SOUTH, new ControlePanel(mapPanel));
+		fen.add(BorderLayout.SOUTH, controlePanel);
 		
 		
 		fen.setLocationRelativeTo(null);
@@ -79,6 +80,8 @@ public class MainApplication {
 		fen.setTitle("Jeu Pokémon");
 
 		fen.setVisible(true);
+		int[] coordonnees = controlePanel.getCoord();
+        System.out.println("Coordonnées du clic : " + coordonnees[0] + " " + coordonnees[1]);
 	}
 
 }
