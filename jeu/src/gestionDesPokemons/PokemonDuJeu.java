@@ -8,10 +8,9 @@ public class PokemonDuJeu {
 	private Boolean isSauvage;
 	private Random rand = new Random();
 	
-	public PokemonDuJeu(Pokemon pokemon, Coordinate Coord, Boolean isSauvage) {
+	public PokemonDuJeu(Pokemon pokemon, Boolean isSauvage) {
 		this.pokemon = pokemon;
-		this.Coord = Coord;
-
+		this.Coord = genereCoord();
 		this.isSauvage = isSauvage;
 	}
 

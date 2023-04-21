@@ -1,6 +1,7 @@
 package Main;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import gestionDesPokemons.Coordinate;
@@ -9,15 +10,22 @@ import gestionDesPokemons.PokemonDuJeu;
 
 public class Jeu_general {
 	
-	private ArrayList<PokemonDuJeu> listePokemon;
-	private Random r = new Random();
-	
-	public Jeu_general(ArrayList<PokemonDuJeu> listePokemon) {
-		this.listePokemon = listePokemon;
+	public static void debutduJeu() {
+		List<Pokemon> Pokemons = ChargerPoke.loadPokemon();
+		ArrayList<PokemonDuJeu> listePokemonDuJeu = new ArrayList<PokemonDuJeu>();
+		for (int i=0; i<=7; i++) {
+			for (int j=1; i<=Pokemons.size(); j++){
+				Pokemon pokemon = Pokemons.get(j);
+				PokemonDuJeu pok = new PokemonDuJeu(pokemon, true);
+				listePokemonDuJeu.add(pok);
+			}
+		}
+		creerMDJ(listePokemonDuJeu, 5);
 	}
 	
-	public void creerMDJ(int nbPok) {
+	public static void creerMDJ(ArrayList<PokemonDuJeu> listePokemon, int nbPok) {
 		// crée la main du joueur avec un nombre de pokemons
+		Random r = new Random();
 		for (int i=0; i<=nbPok; i++ ){
 			int indPok = r.nextInt(listePokemon.size());
 			listePokemon.get(indPok).setCoord(null);
