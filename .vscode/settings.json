@@ -1,6 +1,8 @@
 {
+    "java.project.sourcePaths": [
+        "jeu/src"],
+    "java.project.outputPath": "jeu/bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/Users/lila.cassan/Downloads/opencsv-5.7.1.jar"
+        "jeu/lib/*.jar"
     ]
 }
