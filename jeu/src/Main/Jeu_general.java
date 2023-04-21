@@ -11,19 +11,6 @@ import gestionDesPokemons.PokemonDuJeu;
 
 public class Jeu_general {
 	
-	public static void debutduJeu() {
-		List<Pokemon> Pokemons = ChargerPoke.loadPokemon();
-		ArrayList<PokemonDuJeu> listePokemonDuJeu = new ArrayList<PokemonDuJeu>();
-		for (int i=0; i<=7; i++) {
-			for (int j=1; i<=Pokemons.size(); j++){
-				Pokemon pokemon = Pokemons.get(j);
-				PokemonDuJeu pok = new PokemonDuJeu(pokemon, true);
-				listePokemonDuJeu.add(pok);
-			}
-		}
-		creerMDJ(listePokemonDuJeu, 5);
-	}
-	
 	public static void creerMDJ(ArrayList<PokemonDuJeu> listePokemon, int nbPok) {
 		// crée la main du joueur avec un nombre de pokemons
 		Random r = new Random();
@@ -34,15 +21,15 @@ public class Jeu_general {
 		}
 	}
 	
-	public ArrayList<PokemonDuJeu> cliquerSurCarte() {
+	public ArrayList<PokemonDuJeu> cliquerSurCarte(ArrayList<PokemonDuJeu> listePokemonDuJeu) {
 		// L'utilisateur clique sur la carte et on lui affiche les pokémons
 		// présents à moins de 5 unités de lui
 		ArrayList<PokemonDuJeu> PokProches = new ArrayList<PokemonDuJeu>();
 		while (PokProches.size() == 0) {
 			Coordinate coord = new Coordinate(MouseInfo.getPointerInfo().getLocation().getX(),MouseInfo.getPointerInfo().getLocation().getY()) ;
-			for (int i=0; i<=listePokemon.size(); i++) {
-				if (coord.distance(listePokemon.get(i).getCoord()) <= 5) {
-					PokProches.add(listePokemon.get(i));
+			for (int i=0; i<=listePokemonDuJeu.size(); i++) {
+				if (coord.distance(listePokemonDuJeu.get(i).getCoord()) <= 5) {
+					PokProches.add(listePokemonDuJeu.get(i));
 				}
 			}
 			System.out.println("Il n'y a pas de Pokémons dans ce secteur!");

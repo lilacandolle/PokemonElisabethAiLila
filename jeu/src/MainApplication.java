@@ -1,11 +1,16 @@
 
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import Main.*;
+import gestionDesPokemons.*;
+import gui.*;
 import gui.CartePanel;
 import gui.ControlePanel;
 import gui.FichePanel;
@@ -23,7 +28,16 @@ public class MainApplication {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		List<Pokemon> Pokemons = ChargerPoke.loadPokemon();
+		ArrayList<PokemonDuJeu> listePokemonDuJeu = new ArrayList<PokemonDuJeu>();
+		for (int i=0; i<=7; i++) {
+			for (int j=0; j<Pokemons.size(); j++){
+				Pokemon pokemon = Pokemons.get(j);
+				PokemonDuJeu pok = new PokemonDuJeu(pokemon, true);
+				listePokemonDuJeu.add(pok);
+			}
+		}
+		Jeu_general.creerMDJ(listePokemonDuJeu, 5);
 		// Look and Feel dépend de l'OS.
 		try {
 			String os = System.getProperty("os.name").toLowerCase();
