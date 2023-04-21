@@ -1,4 +1,5 @@
 package gestionDesPokemons;
+import java.util.Random ;
 
 public class PokemonDuJeu {
 	
@@ -7,12 +8,22 @@ public class PokemonDuJeu {
 	private Coordinate Coord;
 	private Boolean isSauvage;
 	
-	public PokemonDuJeu(Pokemon pokemon, int id, Coordinate Coord, Boolean isSauvage) {
+	public PokemonDuJeu(Pokemon pokemon, int id, Boolean isSauvage) {
 		this.pokemon = pokemon;
 		this.id = id;
-		this.Coord = Coord;
+		this.Coord = genereCoord();
 		this.isSauvage = isSauvage;
 	}
+
+	public Coordinate genereCoord() {
+		Random r1 = new Random();
+		Random r2 = new Random();
+		int x = r1.nextInt(1000);
+		int y = r2.nextInt(800);
+		Coordinate coord_Pok = new Coordinate(x, y);
+		return coord_Pok;
+	}
+
 	//get pokemon
 	public Pokemon getPokemon() {return this.pokemon;}
 	public String getNomPokemon() {return this.pokemon.getNom();}
