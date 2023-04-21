@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import gestionDesPokemons.Coordinate;
-import gestionDesPokemons.Pokemon;
-import gestionDesPokemons.PokemonDuJeu;
+import gestionDesPokemons.*;
 
 public class Jeu_general {
 	
@@ -49,14 +47,62 @@ public class Jeu_general {
 		return PokProches;
 		
 	}
+
+	/**
+	 * La méthode derouleDuCombat prend en entrée le pokémon sauvage choisit par le joueur.
+	 * Le combat est initialisé par le choix d'un pokemon du joueur.
+	 * Ensuite, le combat se déroule au tour par tour (calculé grâce à l'incrément i).
+	 * À son tour, le joueur choisit parmis ses actions possibles.
+	 * Au tour de l'ordinateur, le pokemon sauvage attaque aléatoirement avec une probabilité de 0.5 par type d'attaque.
+	 * La boucle while vérifie qu'il reste des vies aux deux pokémons
+	 * à la fin de chaque nouveau tour. Si ce n'est pas le cas, il renvoie, selon le pokémon perdant :
+	 * @return boolean victoire 
+	 */
+	public boolean derouleDuCombat (pokemonS) {
+			boolean victoire = false ;
+			int i = 0 ;
+			Pokemon pokemonD = changerPok(nouveaupokemon) ; //le joueur choisit un de ses pokemons
+			while (hpS > 0 && hpD > 0) { //tant qu'il reste des vies aux deux pokémons, la boucle tourne
+				if (i%2 == 0) { //c'est au joueur de commencer à jouer
+				switch (TypeAttaque) { 
+					case ELEMENT :
+						attaque (true, pokemonD, pokemonS);
+					case NEUTRE :
+						attaque (false, pokemonD, pokemonS);
+					case FUITE :
+						break ;
+					case CHANGERDEPOKEMON :
+						nouveaupokemon = cliquerSurPokemon ;
+						changerPok(nouveaupokemon) ;
+					}
+				else {	//c'est au tour du pokémon sauvage
+					if (Math.random() > 0.5) { //l'attaque est aléatoire avec une proba de 50%
+						attaque(false, pokemonS, pokemonD) ; }
+
+					else {
+						attaque(true, pokemonS, pokemonD) ; }
+				}
+				i ++ ; 
+			}
+			if (hpS <= 0) { //si les vies du pokémon sauvage sont inférieures ou égales à 0 :
+				victoire = true ; //la victoire est pour le joueur,
+				pokemonS.setisSauvage(false); //le pokémon est capturé,
+				pokemonS.setCoord(null); //ses coordonnées sont nulles.
+			}
+			else {
+				victoire = false
+			}
+			return victoire ;
+		}
+
 	
 	public String lancerLeCombat() {
 		// demande au joueur de choisir le pokémon à attaquer
 		// et le pokémon défenseur et renvoie le résultat du combat
 		System.out.println("Quel Pokémon voulez-vous attaquer?");
-		Pokemon PokS = choisirPokemonS();
+		Pokemon pokemonS = choisirPokemonS();
 		String resultat = new String ();
-		if (Combat(PokS) = true) { 
+		if (derouleDuCombat(pokemonS) = true) { 
 			resultat += "Vous avez gagné! Le pokémon a été capturé";
 		}
 		else {
