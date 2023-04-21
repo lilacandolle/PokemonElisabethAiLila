@@ -6,19 +6,19 @@ public class PokemonDuJeu {
 	private Pokemon pokemon; //les Pokemon du jeu sont des types de Pokemon
 	private Coordinate Coord; //les Pokemon du jeu ont des coordonnées, sauf s'ils ont été capturés
 	private Boolean isSauvage; //les Pokemon du jeu peuvent être sauvages ou avoir été capturés
-	private Random rand = new Random(); //crée un objet Random pour générer des coordonnées aléatoires
-	
+
 	// Constructeur
 	public PokemonDuJeu(Pokemon pokemon, Coordinate Coord, Boolean isSauvage) {
 
 		this.pokemon = pokemon;
-		this.Coord = Coord;
+		this.Coord = genereCoord();
 
 		this.isSauvage = isSauvage;
 	}
   
   // Génère des coordonnées aléatoires
 	public Coordinate genereCoord() {
+		Random rand = new Random();
 		int x = rand.nextInt(1000);
 		int y = rand.nextInt(800);
 		return new Coordinate(x, y);
