@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
  
 import gestionDesPokemons.Famille;
@@ -13,7 +14,7 @@ public class ChargerPoke{
     private ChargerPoke() {
     }
  
-    public static void loadPokemon() {
+    public static List<Pokemon> loadPokemon() {
  
         String csvFile = "data/pokemon_first_gen.csv";
  
@@ -31,11 +32,14 @@ public class ChargerPoke{
  
                 Pokemon pokemon = new Pokemon(nom, famille, HP);
                 pokemons.add(pokemon);
+                return pokemons;
             }
  
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return Collections.emptyList();
  
     }
+
 }
