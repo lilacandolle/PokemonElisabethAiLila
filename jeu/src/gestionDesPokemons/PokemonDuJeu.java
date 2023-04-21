@@ -4,15 +4,14 @@ import java.util.Random ;
 public class PokemonDuJeu {
 	
 	private Pokemon pokemon;
-	private int id;
 	private Coordinate Coord;
 	private Boolean isSauvage;
 	private Random rand = new Random();
 	
-	public PokemonDuJeu(Pokemon pokemon, int id, Boolean isSauvage) {
+	public PokemonDuJeu(Pokemon pokemon, Coordinate Coord, Boolean isSauvage) {
 		this.pokemon = pokemon;
-		this.id = id;
-		this.Coord = genereCoord();
+		this.Coord = Coord;
+
 		this.isSauvage = isSauvage;
 	}
 
@@ -25,7 +24,6 @@ public class PokemonDuJeu {
 	//get pokemon
 	public Pokemon getPokemon() {return this.pokemon;}
 	public String getNomPokemon() {return this.pokemon.getNom();}
-	public int getid() {return this.id;}
 	public Coordinate getCoord() {return this.Coord;}
 	public Boolean getisSauvage() {return this.isSauvage;}
 	

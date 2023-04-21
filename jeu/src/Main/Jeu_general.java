@@ -11,7 +11,7 @@ public class Jeu_general {
 	
 	private ArrayList<PokemonDuJeu> listePokemon;
 	
-	public Jeu_general() {
+	public Jeu_general(ArrayList<PokemonDuJeu> listePokemon) {
 		this.listePokemon = listePokemon;
 	}
 	
