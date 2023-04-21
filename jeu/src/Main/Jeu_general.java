@@ -10,18 +10,19 @@ import gestionDesPokemons.PokemonDuJeu;
 public class Jeu_general {
 	
 	private ArrayList<PokemonDuJeu> listePokemon;
+	private Random r = new Random();
 	
 	public Jeu_general(ArrayList<PokemonDuJeu> listePokemon) {
 		this.listePokemon = listePokemon;
 	}
 	
-	public ArrayList<PokemonDuJeu> creerMDJ() {
-		// crée la main du joueur avec un pokémon quelconque de la liste
-		Random r = new Random();
-		int indPok = r.nextInt(listePokemon.size());
-		ArrayList<PokemonDuJeu> MDJ = new ArrayList<PokemonDuJeu>();
-		MDJ.add(listePokemon.get(indPok));
-		return MDJ;
+	public void creerMDJ(int nbPok) {
+		// crée la main du joueur avec un nombre de pokemons
+		for (int i=0; i<=nbPok; i++ ){
+			int indPok = r.nextInt(listePokemon.size());
+			listePokemon.get(indPok).setCoord(null);
+			listePokemon.get(indPok).setisSauvage(false);
+		}
 	}
 	
 	public ArrayList<PokemonDuJeu> cliquerSurCarte() {

@@ -30,6 +30,10 @@ public class PokemonDuJeu {
 	public void setCoord(int x, int y) {
 		this.Coord = new Coordinate(x, y);
 	}
+
+	public void setCoord(Coordinate coord) {
+		this.Coord = coord;
+	}
 	
 	public void setisSauvage (Boolean issauvage) {
 		this.isSauvage = issauvage;
