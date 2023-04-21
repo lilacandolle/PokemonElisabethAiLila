@@ -20,7 +20,7 @@ public class ControlePanel extends JPanel {
 
 	public ControlePanel(CartePanel cartePanel) {
 		
-		this.setSize(1000, 1000);
+		this.setSize(1000, 800);
 		
 		// On construit un bouton
 		JButton clic = new JButton("Clic ici");

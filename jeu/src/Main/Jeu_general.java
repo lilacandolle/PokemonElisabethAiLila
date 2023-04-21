@@ -1,5 +1,6 @@
 package Main;
 
+import java.awt.MouseInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -27,7 +28,7 @@ public class Jeu_general {
 		ArrayList<PokemonDuJeu> PokProches = new ArrayList<PokemonDuJeu>();
 		while (PokProches.size() == 0) {
 			Coordinate coord = new Coordinate(MouseInfo.getPointerInfo().getLocation().getX(),MouseInfo.getPointerInfo().getLocation().getY()) ;
-			for (int i=0; i<=listePokemonDuJeu.size(); i++) {
+     	for (int i=0; i<=listePokemonDuJeu.size(); i++) {
 				if (coord.distance(listePokemonDuJeu.get(i).getCoord()) <= 5) {
 					PokProches.add(listePokemonDuJeu.get(i));
 				}
