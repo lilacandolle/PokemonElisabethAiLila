@@ -1,31 +1,39 @@
 package gestionDesPokemons ;
 
-//importer random de math
+// Importations
 import java.util.Random ;
-import java.awt.event.* ;
 
+// Cette classe est appelée dans les méthodes du Main qui lancent et arbitrent un combat
 public class Combat {
-    private PokemonDuJeu pokemonS;
-    private PokemonDuJeu pokemonD;//pokemondujoueur
-    private int hpS = pokemonS.getPokemon().getHP();
-    private int hpD = pokemonD.getPokemon().getHP();
+
+    private PokemonDuJeu pokemonS; //pokemon sauvage
+    private PokemonDuJeu pokemonD; //pokemon du joueur
+    private int hpS = pokemonS.getPokemon().getHP(); //récupère les points de vie max du pokemon sauvage
+    private int hpD = pokemonD.getPokemon().getHP(); //récupère les points de vie max du pokemon domestique
     
 
+    // Constructeur
     public Combat(PokemonDuJeu pokemonS, PokemonDuJeu pokemonD) {
         this.pokemonS = pokemonS;
         this.pokemonD = pokemonD;
     }
 
+    // Change le pokemon principal du joueur par le nouveau pokemon renseigné
     public void changerPok(PokemonDuJeu nouveaupokemon) {
-        pokemonS = nouveaupokemon;
+        pokemonD = nouveaupokemon;
     }
 
+    // Renvoie des coeff selon le type de l'attaque, du pokemon qui attaque et de celui qui défent
     public void attaque (boolean isElement, PokemonDuJeu attaquant, PokemonDuJeu defenseur) {
-        Famille famA = attaquant.getPokemon().getFamille() ;
-        Famille famD = defenseur.getPokemon().getFamille();
-        double coef;
-        switch (famA) {
+        Famille famA = attaquant.getPokemon().getFamille(); //trouve la famille du pokemon attaquant
+        Famille famD = defenseur.getPokemon().getFamille(); //trouve la famille du pokemon défenseur
+        double coef; //crée le coef multiplicateur
+        int degats; // crée les dégâts à appliquer au pokemon qui défend
+
+        //cas des familles du pokemon qui attaque
+        switch (famA) { 
             case ACIER:
+                //cas des familles du pokemon qui défend
                 coef = switch (famD) {
                     case ACIER, EAU, FEU, ELECTRIK -> 0.5;
                     case GLACE, FEE, ROCHE -> 2;
@@ -162,13 +170,13 @@ public class Combat {
                 coef = 1;
                 break ;
         }
-
-        int degats;
-        if (!isElement) {
-            degats = 20 ; }
-        else {
-            degats = (int) coef * 20 ; }
         
+        if (!isElement) {
+            degats = 20 ; } //si l'attaque est neutre, les dégâts de base sont de 20
+        else {
+            degats = (int) coef * 20 ; } //si l'attaque est élémentaire, on applique le coef aux dégâts de base
+        
+        // On applique les dégâts au bon pokemon selon si le défenseur est le pokemon sauvage ou celui du joueur
         if (defenseur==pokemonD){
             hpD -= degats  ;
         }
