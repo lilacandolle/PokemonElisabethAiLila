@@ -1,45 +1,41 @@
-package Main ;
-
+package Main;
+ 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
-
+ 
 import gestionDesPokemons.Famille;
 import gestionDesPokemons.Pokemon;
-
-public class ChargerPoke {
-    
-    public static void main(String[] args) {
-
-        String csvFile = "/Users/lila.cassan/Desktop/PokemonElisabethAiLila/data/pokemon_first_gen.csv";
-
-        try (CSVReader reader = new CSVReader(new FileReader(csvFile))) {
-            String[] headers = reader.readNext(); // ignorer la première ligne qui contient les en-têtes
-
+ 
+public class ChargerPoke{
+    private ChargerPoke() {
+    }
+ 
+    public static void loadPokemon() {
+ 
+        String csvFile = "data/pokemon_first_gen.csv";
+ 
+        try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
+            String line = reader.readLine(); // ignorer la première ligne qui contient les en-têtes
+            String[] headers = line.split(",");
+ 
             List<Pokemon> pokemons = new ArrayList<>();
-
-            Object[] line;
-            while ((line = reader.readNext()) != null) {
-                String nom = (String) line[0];
-                Famille famille = (Famille.fromString((String) line[1]));
-                int HP = (int)line[4];
-
+ 
+            while ((line = reader.readLine()) != null) {
+                String[] values = line.split(",");
+                String nom = values[0];
+                Famille famille = Famille.fromString(values[1]);
+                int HP = Integer.parseInt(values[4]);
+ 
                 Pokemon pokemon = new Pokemon(nom, famille, HP);
                 pokemons.add(pokemon);
             }
-
-
+ 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (CsvValidationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
-
+ 
     }
 }
